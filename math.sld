@@ -1,6 +1,6 @@
 (define-library (wqy24 math)
  (import (scheme base))
- (export fmod)
+ (export fmod sign shengjin)
  (begin
   (define (fmod a b)
    (- a (* b (truncate (/ a b)))))
