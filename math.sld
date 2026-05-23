@@ -1,5 +1,5 @@
 (define-library (wqy24 math)
- (import (scheme base))
+ (import (scheme base) (scheme inexact))
  (export fmod sign shengjin)
  (begin
   (define (fmod a b)
@@ -9,7 +9,7 @@
     [(zero? a) 0]
     [(positive? a) 1]
     [else -1]))
-  (define (shengjin a b c d) ; (zero? x) of deriv2, uses Shengjin algorithm
+  (define (shengjin a b c d) ; solve (= 0 (+ (* a (expt x 3)) (* b (expt x 2)) (* c x) d))
    (define (cbrt n)
     (if (negative? n)
      (- (expt (- n) (/ 1 3)))
