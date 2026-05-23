@@ -13,4 +13,5 @@
      (display "[DEBUG] ")
      (display msg p)
      (write-char #\space p)
-     (write-shared obj p)]))))
+     (write-shared obj p)
+     (newline)]))))
