@@ -9,7 +9,7 @@
    (case-lambda
     [(msg obj)
      (log msg obj (default-log-port))]
-    [(msg obj)
-     (display msg)
-     (write-char #\space)
-     (write-shared obj)]))))
+    [(msg obj o)
+     (display msg p)
+     (write-char #\space p)
+     (write-shared obj p)]))))
