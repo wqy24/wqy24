@@ -1,4 +1,4 @@
-#|  -- this file is part of wqy24's scheme library set
+#| debug.sld -- this file is part of wqy24's scheme library set
  | Copyright (C) 2026 wqy24
  |
  | This set is free software: you can redistribute it and/or modify
