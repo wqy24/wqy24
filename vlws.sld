@@ -62,7 +62,7 @@
   (define (stream-take s n)
    (unless (integer? n) (error "Taking non-integer:" n))
    (when (negative? n) (error "Taking negative:" n))
-   (if (or (zero? n) (stream-null s))
+   (if (or (zero? n) (stream-null? s))
     stream-null
     (stream-cons (stream-car s)
      (stream-take (stream-cdr s) (- n 1)))))
