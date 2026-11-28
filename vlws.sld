@@ -19,7 +19,7 @@
  (import (scheme base) (scheme case-lambda) (only (srfi 1) any))
  (export stream-cons stream-car stream-cdr stream-null stream? stream-null? stream-pair?
          stream-map stream-scan stream-take stream-drop stream stream->list list->stream
-         stream-unfold stream-from stream-take-while stream-drop-while)
+         stream-unfold stream-from stream-take-while stream-drop-while stream-foreach)
  (begin
   (define-syntax stream-cons
    (syntax-rules ()
@@ -96,4 +96,9 @@
 
   (define (stream-drop-while p? s)
    (if (and (stream-pair? s) (p? s))
-    (stream-drop-while p? (stream-cdr s))))))
+    (stream-drop-while p? (stream-cdr s))))
+
+  (define (stream-foreach p . s)
+   (unless (any stream-null? s)
+    (apply p (map stream-car s))
+    (apply stream-foreach p (map stream-cdr s))))))
